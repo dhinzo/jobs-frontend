@@ -3,7 +3,8 @@ import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 
-export default function NewJobForm(props) {
+export default function EditJobForm(props) {
+    console.log(props)
     const [lgShow, setLgShow] = useState(false)
     
     

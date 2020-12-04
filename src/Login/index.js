@@ -2,25 +2,42 @@ import React, { useState } from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
+import axios from 'axios'
 
 export default function Login(props) {
+    // console.log("here are the props in Login", props)
     const [show, setShow] = useState(false);
-
+    
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    const intialInputState = {username: '', password: ''}
-    const [eachEntry, setEachEntry] = useState(intialInputState)
-    const {username, password} = eachEntry
-   
-     const handleInputChange = (e) =>{
-        setEachEntry({ ...eachEntry, [e.target.name]: e.target.value})
-    }
-     const handleSubmit = (e) =>{
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+
+    const login = async (username, password) => {
+      const url = process.env.REACT_APP_API_URL + "/trackr/users/login"
+      try {         
+          const res = await axios.post(url, {
+              username: username,
+              password: password
+          }, { withCredentials: true })
+          if (res.status === 200) {   
+              setUsername(username)
+              setPassword(password)              
+              // console.log(res)
+              props.setUser(res.data.data.username)
+              // console.log("here are the props after login: ", state)
+          }     
+      } catch(err) {
+          console.log("there was an error logging in: ", err)
+      }
+  }
+
+    const handleSubmit = (e) =>{
         e.preventDefault()
         //lifting up state
-        props.login(eachEntry)
-        handleClose()
+      login(username, password)
+      handleClose()
     }
     
     return (
@@ -41,15 +58,15 @@ export default function Login(props) {
                         type="text" 
                         placeholder="Enter Username"
                         name={username}
-                        onChange={handleInputChange} />
+                        onChange={(e) => setUsername(e.target.value)} />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Title of Position</Form.Label>
+                    <Form.Label>Password</Form.Label>
                     <Form.Control 
                         type="password" 
                         placeholder="Password"
                         name={password}
-                        onChange={handleInputChange} />
+                        onChange={(e) => setPassword(e.target.value)} />
                 </Form.Group>
               <Button
               variant="primary"
