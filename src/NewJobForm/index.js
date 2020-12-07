@@ -28,6 +28,7 @@ export default function NewJobForm(props) {
         e.preventDefault()
         props.createJob(eachEntry)
         setEachEntry(initialInputState)
+        setLgShow(false)
     }
 
     return (

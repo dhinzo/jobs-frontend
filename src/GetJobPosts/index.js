@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
+//import Button from 'react-bootstrap/Button'
+// import EditJobForm from '../EditJobForm'
 
 export default function GetJobPosts(props) {
     console.log("these are the props in getJobs: ", props)
@@ -16,6 +17,7 @@ export default function GetJobPosts(props) {
 
                 >
                 <Card.Header
+                    
                     onClick={ () => props.viewJob(job.id)}>{job.company}</Card.Header>
                 <Card.Body>
                     <Card.Title>
@@ -26,14 +28,14 @@ export default function GetJobPosts(props) {
                     </Card.Text>
                 </Card.Body>            
             <Card.Footer>
-                <Button
-                    variant='outline-warning'
-                    onClick={() => props.editJob(job.id)}>Edit</Button>
+                
             </Card.Footer>
             </Card>
         )
     })
     return (
+        
         <Card>{allJobs}</Card>
+      
     )
 }

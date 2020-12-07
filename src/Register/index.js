@@ -4,54 +4,42 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import axios from 'axios'
 
-export default function Login(props) {
-    // console.log("here are the props in Login", props)
+export default function Register(props) {
     const [show, setShow] = useState(false);
     
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-
-    // const handleInputChange = (e) => {
-    //   setEachEntry({ ...eachEntry, [e.target.name]: e.target.value})
-    // }
-
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
-    const login = async (username, password) => {
-      const url = process.env.REACT_APP_API_URL + "/trackr/users/login"
-      try {         
-          const res = await axios.post(url, {
-              username: username,
-              password: password
-          }, { withCredentials: true })
-          if (res.status === 200) {   
-              setUsername(username)
-              setPassword(password)              
-              console.log(res)
-              props.setUser(res.data.data.username)
-              // console.log("here are the props after login: ", state)
-          }     
-      } catch(err) {
-          console.log("there was an error logging in: ", err)
-      }
-  }
 
-
-    const handleLoginSubmit = (e) => {
-      e.preventDefault()
-        //lifting up state
-        login(username, password)
-      handleClose()
+    const register = async (username, password) => {
+        const url = process.env.REACT_APP_API_URL + "/trackr/users/register"
+        try {
+            const res = await axios.post(url, {
+                username: username,
+                password: password
+            }, { withCredentials: true })
+            if (res.status === 200) {
+                setUsername(username)
+                setPassword(password)
+                props.setUser(res.data.data.username)
+            }
+        } catch (err) {
+            console.log("There was an error registering: " ,err)
+        }
     }
-
- 
+    const handleSubmit = (e) => {
+    e.preventDefault()
+    register(username, password)  
+    handleClose()
+    }
     
     return (
-        <div>
+        <>
           <Button variant="primary" onClick={handleShow}>
-            Login
+            Register
           </Button>
     
           <Modal show={show} onHide={handleClose}>
@@ -61,7 +49,7 @@ export default function Login(props) {
             <Modal.Body>
             <Form>
                 <Form.Group>
-                    <Form.Label>Username</Form.Label>
+                    <Form.Label>Create your Username</Form.Label>
                     <Form.Control 
                         type="text" 
                         placeholder="Enter Username"
@@ -69,7 +57,7 @@ export default function Login(props) {
                         onChange={(e) => setUsername(e.target.value)} />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label>Create a Password</Form.Label>
                     <Form.Control 
                         type="password" 
                         placeholder="Password"
@@ -79,15 +67,14 @@ export default function Login(props) {
               <Button
               variant="primary"
               type='submit'
-              onClick={handleLoginSubmit}>
-                Login
+              onClick={handleSubmit}>
+                Register & Login
               </Button>
             
             </Form>
-            </Modal.Body>            
+            </Modal.Body>
+            
           </Modal>
-          
-          
-        </div>
+        </>
     )
 }

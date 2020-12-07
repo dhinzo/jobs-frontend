@@ -4,18 +4,19 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 
 export default function EditJobForm(props) {
-    console.log(props)
+    console.log("props in edit modal: ", props)
     const [lgShow, setLgShow] = useState(false)
     
     
     
     const initialInputState = {
-        company: '', 
-        position: '', 
-        location: '', 
-        materials_required: '', 
-        link: '', 
-        notes: '' }
+        company: props.viewJob.company, 
+        position: props.viewJob.position, 
+        location: props.viewJob.location, 
+        materials_required: props.viewJob.materials_required, 
+        link: props.viewJob.link, 
+        notes: props.viewJob.notes
+    }
     
     const [eachEntry, setEachEntry] = useState(initialInputState)
     const { company, position, location, materials_required, link, notes } = eachEntry 
@@ -25,15 +26,17 @@ export default function EditJobForm(props) {
       }
     
     const handleSubmit = e => {
-        console.log(props)
         e.preventDefault()
-        props.createJob(eachEntry)
-        setEachEntry(initialInputState)
+        props.updateJob(eachEntry)
+        setLgShow(false)
+        //props.onClick(props.onClick)
     }
 
     return (
         <>
-        <Button onClick={() => setLgShow(true)}>Create New Job</Button>
+        <Button
+            variant='outline-warning'
+            onClick={() => setLgShow(true)}>Edit</Button>
         <Modal
           size="lg"
           show={lgShow}
@@ -51,7 +54,7 @@ export default function EditJobForm(props) {
                     <Form.Label>Name of Company</Form.Label>
                     <Form.Control 
                         type="text" 
-                        placeholder="Enter Company"
+                        placeholder={props.viewJob.company}
                         name="company"
                         value={company}
                         onChange={handleInputChange} />
@@ -69,7 +72,7 @@ export default function EditJobForm(props) {
                     <Form.Label>Job Location</Form.Label>
                     <Form.Control 
                         type="text" 
-                        placeholder="Location"
+                        placeholder={props.viewJob.location}
                         name="location"
                         value={location}
                         onChange={handleInputChange} />
@@ -78,7 +81,7 @@ export default function EditJobForm(props) {
                     <Form.Label>Required Materials</Form.Label>
                     <Form.Control 
                         type="text" 
-                        placeholder="Required Materials"
+                        placeholder={props.viewJob.materials_required}
                         name="materials_required"
                         value={materials_required}
                         onChange={handleInputChange} />
@@ -87,7 +90,7 @@ export default function EditJobForm(props) {
                     <Form.Label>Job Posting Link</Form.Label>
                     <Form.Control 
                         type="text" 
-                        placeholder="Link"
+                        placeholder={props.viewJob.link}
                         name="link"
                         value={link}
                         onChange={handleInputChange} />
@@ -97,7 +100,7 @@ export default function EditJobForm(props) {
                     <Form.Control 
                         as="textarea"
                         rows={4} 
-                        placeholder="Link"
+                        placeholder={props.viewJob.notes}
                         name="notes"
                         value={notes}
                         onChange={handleInputChange} />
