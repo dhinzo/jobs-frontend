@@ -1,6 +1,5 @@
 import React from 'react'
-import Navbar from 'react-bootstrap/NavBar'
-import Nav from 'react-bootstrap/Nav'
+import { Navbar, Nav } from 'react-bootstrap'
 import Login from '../Login'
 import Logout from '../Logout'
 import Register from '../Register'
