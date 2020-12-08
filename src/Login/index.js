@@ -31,6 +31,8 @@ export default function Login(props) {
               setPassword(password)              
               console.log(res)
               props.setUser(res.data.data.username)
+              props.clearJobs()
+              props.getJobs()
               // console.log("here are the props after login: ", state)
           }     
       } catch(err) {
@@ -42,7 +44,7 @@ export default function Login(props) {
     const handleLoginSubmit = (e) => {
       e.preventDefault()
         //lifting up state
-        login(username, password)
+      login(username, password)      
       handleClose()
     }
 

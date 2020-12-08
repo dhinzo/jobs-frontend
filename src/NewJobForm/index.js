@@ -97,7 +97,7 @@ export default function NewJobForm(props) {
                     <Form.Control 
                         as="textarea"
                         rows={4} 
-                        placeholder="Link"
+                        placeholder="Leave some notes about me"
                         name="notes"
                         value={notes}
                         onChange={handleInputChange} />

@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav'
 import Login from '../Login'
 import Logout from '../Logout'
 import Register from '../Register'
+import NewJobForm from '../NewJobForm'
 
 export default function UserNav(props) {
     return (
@@ -15,17 +16,21 @@ export default function UserNav(props) {
                 <Navbar.Text>Signed in as: {props.loggedInUser}</Navbar.Text>
                 }
                     <Nav className="mr-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#link">Link</Nav.Link>
                     </Nav>
                     { props.loggedIn === true ?
+                    <React.Fragment>
+                    <NewJobForm
+                        createJob={props.createJob} />
                     <Logout
                         unsetUser={props.unsetUser} />
+                    </React.Fragment> 
                     :
                     <React.Fragment>
                     <Register
                         setUser={props.setUser} />
                     <Login
+                        getJobs={props.getJobs}
+                        clearJobs={props.clearJobs}
                         login={props.login}
                         setUser={props.setUser} />
                     </React.Fragment>

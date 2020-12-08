@@ -3,6 +3,16 @@ import Card from 'react-bootstrap/Card'
 //import Button from 'react-bootstrap/Button'
 // import EditJobForm from '../EditJobForm'
 
+// create conditional (ternary) 
+// if job.user.id === current_user.id && 
+// then show the card
+// else don't show
+
+// DragAndDropContext
+
+
+// Draggable
+
 export default function GetJobPosts(props) {
     console.log("these are the props in getJobs: ", props)
     const allJobs = props.jobs.map(job => {
@@ -11,8 +21,8 @@ export default function GetJobPosts(props) {
                 key={job.id}
                 bg='dark'
                 text={'bg' === 'light' ? 'dark' : 'white'}
-                style={{ width: '15rem' }}
-                className="mb-2"
+                style={{ width: '15rem', marginLeft: '2px', marginRight: '2px', marginTop: '5px'}}
+                className="mb-2 row d-flex"
                 
 
                 >
@@ -34,8 +44,9 @@ export default function GetJobPosts(props) {
         )
     })
     return (
+        <div className='container' style={{ border: '1px solid black' }}>
+            <div className='row'>{allJobs}</div>
         
-        <Card>{allJobs}</Card>
-      
+        </div>
     )
 }

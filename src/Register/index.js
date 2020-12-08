@@ -44,7 +44,7 @@ export default function Register(props) {
     
           <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
-              <Modal.Title>Login</Modal.Title>
+              <Modal.Title>Register</Modal.Title>
             </Modal.Header>
             <Modal.Body>
             <Form>
@@ -52,7 +52,7 @@ export default function Register(props) {
                     <Form.Label>Create your Username</Form.Label>
                     <Form.Control 
                         type="text" 
-                        placeholder="Enter Username"
+                        placeholder="Enter a Username"
                         name={username}
                         onChange={(e) => setUsername(e.target.value)} />
                 </Form.Group>
@@ -60,7 +60,7 @@ export default function Register(props) {
                     <Form.Label>Create a Password</Form.Label>
                     <Form.Control 
                         type="password" 
-                        placeholder="Password"
+                        placeholder="Create a Password"
                         name={password}
                         onChange={(e) => setPassword(e.target.value)} />
                 </Form.Group>
@@ -68,7 +68,7 @@ export default function Register(props) {
               variant="primary"
               type='submit'
               onClick={handleSubmit}>
-                Register & Login
+                Register
               </Button>
             
             </Form>

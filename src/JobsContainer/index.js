@@ -36,6 +36,13 @@ export default class JobsContainer extends React.Component {
     }
     // ****** VIEW FUNCTIONS *******    
     
+    clearJobs = () => {
+        this.setState({
+            jobs: []
+        })
+    }
+
+
     viewJob = (idOfJob) => {
         this.setState({
             idOfViewJob: idOfJob,
@@ -67,33 +74,6 @@ export default class JobsContainer extends React.Component {
 
 // ****** REQUEST FUNCTIONS *******
 
-// ****** Login & Register ******
-
-//     login = async (loginInfo) => {
-//     const url = process.env.REACT_APP_API_URL + "/trackr/users/login"
-//     try {         
-//         const res = await fetch(url, {
-//           credentials: 'include',
-//           method: 'POST',
-//           body: JSON.stringify(loginInfo),
-//           headers: {
-//               'Content-Type': 'application/json'
-//           } 
-//         })
-//         const loginJson = await res.json()
-//         console.log(res)
-//         if (res.status === 200) {   
-//            this.setState({
-//                loggedIn: true,
-//                loggedInUser: loginJson.data.data.username
-//            })
-//             // console.log("here are the props after login: ", state)
-//         }     
-//     } catch(err) {
-//         console.log("there was an error logging in: ", err)
-//     }
-// }
-
 
 // Get User Jobs    
     getJobs = async () => {
@@ -106,7 +86,7 @@ export default class JobsContainer extends React.Component {
             this.setState({
                 jobs: jobsJson.data,
             })
-            console.log(jobsJson)
+            console.log("Here is the state of jobs ", this.state.jobs)
         } catch (err) {
             console.log("error getting jobs, ", err)
         }
@@ -189,31 +169,31 @@ export default class JobsContainer extends React.Component {
 
     // ****** LIFECYCLE *******
 
-    componentDidMount() {
-       this.getJobs()    
-    }
+    // componentDidMount() {
+    //    this.getJobs()    
+    // }
 
-    componentDidUpdate() {
-        this.getJobs()
-    }
+    // componentDidUpdate() {
+    //     this.getJobs()
+    // }
     
 
     render() {
         return (
             <div>
-                <UserNav
-                    login={this.login}
+            <UserNav
+                    getJobs={this.getJobs}
+                    clearJobs={this.clearJobs}
                     loggedIn={this.state.loggedIn}
                     loggedInUser={this.state.loggedInUser}
                     setUser={this.setUser}
                     unsetUser={this.unsetUser}
+                    createJob={this.addJob}
                  />
                 <h1>Trackr</h1>
                 { this.state.loggedIn === true && this.state.conView === ''
                     &&
                     <>    
-                <NewJobForm
-                    createJob={this.addJob} />
                 <GetJobPosts
                     jobs={this.state.jobs}
                     viewJob={this.viewJob}
@@ -237,10 +217,7 @@ export default class JobsContainer extends React.Component {
                    &&
                    <EditJobForm
                    />
-               }
-                    
-                   
-                
+               }                
             </div>
         )
     }

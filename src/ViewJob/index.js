@@ -19,10 +19,7 @@ export default function ViewJob(props) {
                     backToJobs={props.backToJobs}
                     openEditModal={props.openEditModal} />
             </Tab>
-            <Tab eventKey='link' title='Track Your Progress'>
-                <PageTwo
-                    viewJob={props.viewJob} />
-            </Tab>
+            
               </Tabs>
     )
 }
