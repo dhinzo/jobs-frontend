@@ -2,7 +2,7 @@ import React from 'react'
 //import axios from 'axios'
 import UserNav from '../UserNav'
 import GetJobPosts from '../GetJobPosts'
-import NewJobForm from '../NewJobForm'
+
 import ViewJob from '../ViewJob'
 import EditJobForm from '../EditJobForm'
 

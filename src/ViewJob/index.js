@@ -4,7 +4,7 @@ import React from 'react'
 import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
 import PageOne from '../PageOne'
-import PageTwo from '../PageTwo'
+
 
 export default function ViewJob(props) {
     console.log("Here are the props in ViewJob: ", props)
