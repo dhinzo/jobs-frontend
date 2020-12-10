@@ -16,6 +16,9 @@ export default class JobsContainer extends React.Component {
             idOfViewJob: -1,
             idOfJobToEdit: -1,
             conView: '',
+            unregisteredColumn: [],
+            inProgressColumn: [],
+            completedColumn: []            
         }
     }
     // ****** SET USER FUNCTIONS ******
@@ -57,7 +60,7 @@ export default class JobsContainer extends React.Component {
     }
 
     openEditModal = (id) => {
-        console.log("you're trying to edit this job: ", id)
+        // console.log("you're trying to edit this job: ", id)
         this.setState({
             conView: 'edit this job',
             idOfJobToEdit: id
@@ -86,7 +89,7 @@ export default class JobsContainer extends React.Component {
             this.setState({
                 jobs: jobsJson.data,
             })
-            console.log("Here is the state of jobs ", this.state.jobs)
+            // console.log("Here is the state of jobs ", this.state.jobs)
         } catch (err) {
             console.log("error getting jobs, ", err)
         }
@@ -138,9 +141,32 @@ export default class JobsContainer extends React.Component {
         this.getJobs()
     }
 
-// Update Job
-    updateJob = async (job) => {
-        const url = process.env.REACT_APP_API_URL + "/trackr/jobs/" + this.state.idOfViewJob
+    // Update Progress
+
+    updateProgress = async (job) => {
+        const url = process.env.REACT_APP_API_URL + "/trackr/jobs/" + job.id
+        try{
+            const res = await fetch(url, {
+                credentials: "include",
+                method: "PUT",
+                body: JSON.stringify({progress: job.progress}),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+
+         }
+         catch (err) {
+             console.log("Couldnt progress", err)
+         }
+         this.getJobs();
+    }
+    
+    
+    // Update Job
+
+     updateJob = async (job) => {
+        const url = process.env.REACT_APP_API_URL + "/trackr/jobs/" + (job.id || this.state.idOfViewJob)
         try{
             const res = await fetch(url, {
                 credentials: "include",
@@ -197,6 +223,8 @@ export default class JobsContainer extends React.Component {
                 <GetJobPosts
                     jobs={this.state.jobs}
                     viewJob={this.viewJob}
+                    updateProgress={this.updateProgress}
+                    
                      />
                     </>
                 }

@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 
 export default function EditJobForm(props) {
-    console.log("props in edit modal: ", props)
+    //console.log("props in edit modal: ", props)
     const [lgShow, setLgShow] = useState(false)
     
     

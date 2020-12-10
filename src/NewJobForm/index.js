@@ -24,7 +24,7 @@ export default function NewJobForm(props) {
       }
     
     const handleSubmit = e => {
-        console.log(props)
+        //console.log(props)
         e.preventDefault()
         props.createJob(eachEntry)
         setEachEntry(initialInputState)

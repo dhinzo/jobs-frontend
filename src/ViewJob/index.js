@@ -7,7 +7,7 @@ import PageOne from '../PageOne'
 
 
 export default function ViewJob(props) {
-    console.log("Here are the props in ViewJob: ", props)
+    //console.log("Here are the props in ViewJob: ", props)
     return (
           <Tabs defaultActiveKey='home'>
             <Tab eventKey='home' title='Job Info'>

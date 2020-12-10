@@ -29,7 +29,7 @@ export default function Login(props) {
           if (res.status === 200) {   
               setUsername(username)
               setPassword(password)              
-              console.log(res)
+              //console.log(res)
               props.setUser(res.data.data.username)
               props.clearJobs()
               props.getJobs()

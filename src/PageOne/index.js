@@ -4,7 +4,7 @@ import EditJobForm from '../EditJobForm'
 import DeleteButton from '../DeleteButton'
 
 export default function PageOne(props) {
-    console.log("Here are the props in PageOne: ", props)
+    // console.log("Here are the props in PageOne: ", props)
     return (
         <div>
             <h4>Company:</h4>
