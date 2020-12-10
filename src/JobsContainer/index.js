@@ -146,15 +146,14 @@ export default class JobsContainer extends React.Component {
     updateProgress = async (job) => {
         const url = process.env.REACT_APP_API_URL + "/trackr/jobs/" + job.id
         try{
-            const res = await fetch(url, {
-                credentials: "include",
-                method: "PUT",
-                body: JSON.stringify({progress: job.progress}),
-                headers: {
-                    'Content-Type': 'application/json'
+            await fetch(url, {
+            credentials: "include",
+            method: "PUT",
+            body: JSON.stringify({progress: job.progress}),
+            headers: {
+                'Content-Type': 'application/json'
                 }
             })
-
          }
          catch (err) {
              console.log("Couldnt progress", err)

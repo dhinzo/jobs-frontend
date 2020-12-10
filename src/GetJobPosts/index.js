@@ -1,13 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Card from 'react-bootstrap/Card'
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
-//import Button from 'react-bootstrap/Button'
-// import EditJobForm from '../EditJobForm'
 
-// DragAndDropContext
-
-
-// Draggable
 
 export default function GetJobPosts(props) {
     
@@ -39,16 +33,6 @@ export default function GetJobPosts(props) {
     }
 
     const move = (source, destination, droppableSource, droppableDestination) => {
-        // const sourceClone = Array.from(source)
-        // const destClone = Array.from(destination)
-        // const [removed] = sourceClone.splice(droppableSource.index, 1)
-
-        // destClone.splice(droppableDestination.index, 0, removed)
-
-        // const result = {}
-        // result[droppableSource.droppableId] = sourceClone
-        // result[droppableDestination.droppableId] = destClone
-
         // return result
         //get job you want to move
         const targetJob = jobState[droppableSource][source]
@@ -56,36 +40,26 @@ export default function GetJobPosts(props) {
         targetJob.progress = droppableDestination
         props.updateProgress(targetJob)
 
-
-        
-
-
-
         console.log("targetjob", targetJob)
+        //remove it from its current array
         const newSourceArray = jobState[droppableSource].filter((job)=> job.id !== targetJob.id )
         console.log("newSourceArray", newSourceArray)
-        //remove it from its current array
         
         //add target job to droppable destination
-
-
-
-
-        const destinationArray = [...jobState[droppableDestination].slice(0, destination), targetJob, ...jobState[droppableDestination].slice(destination)]
+        const destinationArray = [
+            ...jobState[droppableDestination].slice(0, destination),
+            targetJob, ...jobState[droppableDestination].slice(destination)
+        ]
         
-
-
-
+        //update ROUTE
+        //update the progress value to
         setJobState({...jobState, [droppableSource]: newSourceArray, [droppableDestination]: destinationArray})
 
         //call ajax function to update the job
         
-        //update ROUTE
-        //update the progress value to
     }
 
-
-    // console.log("this is jobs", props.jobs)
+    // Drag End function
     const onDragEnd = result => {
         const { destination, source} = result
         console.log("this is the result", result)
@@ -256,20 +230,13 @@ export default function GetJobPosts(props) {
             </Draggable>
         )
     })
-
-
-
-
-
-
     console.log("here is the piece of job state", jobState)
     return (
         
         <div style={{ border: '1px solid black', display: 'flex', flexDirection: 'row'}}>
             <DragDropContext onDragEnd={onDragEnd}>
             <Droppable droppableId='unregistered'>
-            {(provided, snapshot) => {
-                {/* console.log("this is the provided in Droppable unRegistered: ", provided) */}
+            {(provided, snapshot) => {                
                 return (
             <div
                 className='col eachColumn'
@@ -287,7 +254,6 @@ export default function GetJobPosts(props) {
             </Droppable>
             <Droppable droppableId={'inProgress'}>
             {(provided, snapshot) => {
-                {/* console.log("this is the provided in Droppable inProgress: ", provided) */}
                 return (
                     <div
                         className='col eachColumn'
