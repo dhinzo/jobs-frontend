@@ -45,17 +45,17 @@ export default function Register(props) {
             className='RegisterBtn'
             variant="info"
             onClick={handleShow}>
-            Register
+            REGISTER
           </Button>
     
           <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
-              <Modal.Title>Register</Modal.Title>
+              <Modal.Title>REGISTER</Modal.Title>
             </Modal.Header>
             <Modal.Body>
             <Form>
                 <Form.Group>
-                    <Form.Label>Create your Username</Form.Label>
+                    <Form.Label>CREATE YOUR USERNAME</Form.Label>
                     <Form.Control 
                         type="text" 
                         placeholder="Enter a Username"
@@ -63,7 +63,7 @@ export default function Register(props) {
                         onChange={(e) => setUsername(e.target.value)} />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Create a Password</Form.Label>
+                    <Form.Label>CREATE A PASSWORD</Form.Label>
                     <Form.Control 
                         type="password" 
                         placeholder="Create a Password"
@@ -71,10 +71,10 @@ export default function Register(props) {
                         onChange={(e) => setPassword(e.target.value)} />
                 </Form.Group>
               <Button
-              variant="primary"
+              className='RegisterBtn'
               type='submit'
               onClick={handleSubmit}>
-                Register
+                REGISTER
               </Button>
             
             </Form>

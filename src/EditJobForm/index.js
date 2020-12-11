@@ -45,13 +45,13 @@ export default function EditJobForm(props) {
         >
           <Modal.Header closeButton>
             <Modal.Title id="example-modal-sizes-title-lg">
-              Enter the details of this new Job Application
+              EDIT THIS JOB
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Form>
                 <Form.Group>
-                    <Form.Label>Name of Company</Form.Label>
+                    <Form.Label>NAME OF COMPANY</Form.Label>
                     <Form.Control 
                         type="text" 
                         placeholder={props.viewJob.company}
@@ -60,7 +60,7 @@ export default function EditJobForm(props) {
                         onChange={handleInputChange} />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Title of Position</Form.Label>
+                    <Form.Label>TITLE OF POSITION</Form.Label>
                     <Form.Control 
                         type="text" 
                         placeholder="Title of Position"
@@ -69,7 +69,7 @@ export default function EditJobForm(props) {
                         onChange={handleInputChange} />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Job Location</Form.Label>
+                    <Form.Label>JOB LOCATION</Form.Label>
                     <Form.Control 
                         type="text" 
                         placeholder={props.viewJob.location}
@@ -78,7 +78,7 @@ export default function EditJobForm(props) {
                         onChange={handleInputChange} />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Required Materials</Form.Label>
+                    <Form.Label>REQUIRED MATERIALS</Form.Label>
                     <Form.Control 
                         type="text" 
                         placeholder={props.viewJob.materials_required}
@@ -87,7 +87,7 @@ export default function EditJobForm(props) {
                         onChange={handleInputChange} />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Job Posting Link</Form.Label>
+                    <Form.Label>JOB POSTING LINK</Form.Label>
                     <Form.Control 
                         type="text" 
                         placeholder={props.viewJob.link}
@@ -96,7 +96,7 @@ export default function EditJobForm(props) {
                         onChange={handleInputChange} />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Add Notes about this job</Form.Label>
+                    <Form.Label>ADD NOTES ABOUT THIS JOB</Form.Label>
                     <Form.Control 
                         as="textarea"
                         rows={4} 
@@ -106,11 +106,11 @@ export default function EditJobForm(props) {
                         onChange={handleInputChange} />
                 </Form.Group>
                 <Button 
-                    variant="primary"
+                    className='LoginBtn'
                     type="submit"
                     onClick={handleSubmit}
                     >
-                    Submit
+                    SUBMIT
                 </Button>
             </Form>
 

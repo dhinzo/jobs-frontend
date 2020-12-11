@@ -36,7 +36,7 @@ export default function NewJobForm(props) {
         <Button
             style={{ borderRadius: '50%', marginLeft: '1rem', color:"white"}}
             className='btn-new-job'
-            
+            size='lg'
             onClick={() => setLgShow(true)}>+</Button>
         <Modal
           size="lg"
@@ -46,13 +46,13 @@ export default function NewJobForm(props) {
         >
           <Modal.Header closeButton>
             <Modal.Title id="example-modal-sizes-title-lg">
-              Enter the details of this new Job Application
+              ADD A NEW JOB TO YOUR SLATE
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Form>
                 <Form.Group>
-                    <Form.Label>Name of Company</Form.Label>
+                    <Form.Label>NAME OF COMPANY</Form.Label>
                     <Form.Control 
                         type="text" 
                         placeholder="Enter Company"
@@ -61,7 +61,7 @@ export default function NewJobForm(props) {
                         onChange={handleInputChange} />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Title of Position</Form.Label>
+                    <Form.Label>TITLE OF POSITION</Form.Label>
                     <Form.Control 
                         type="text" 
                         placeholder="Title of Position"
@@ -70,7 +70,7 @@ export default function NewJobForm(props) {
                         onChange={handleInputChange} />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Job Location</Form.Label>
+                    <Form.Label>JOB LOCATION</Form.Label>
                     <Form.Control 
                         type="text" 
                         placeholder="Location"
@@ -79,7 +79,7 @@ export default function NewJobForm(props) {
                         onChange={handleInputChange} />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Required Materials</Form.Label>
+                    <Form.Label>REQUIRED MATERIALS</Form.Label>
                     <Form.Control 
                         type="text" 
                         placeholder="Required Materials"
@@ -88,7 +88,7 @@ export default function NewJobForm(props) {
                         onChange={handleInputChange} />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Job Posting Link</Form.Label>
+                    <Form.Label>JOB LINK</Form.Label>
                     <Form.Control 
                         type="text" 
                         placeholder="Link"
@@ -97,7 +97,7 @@ export default function NewJobForm(props) {
                         onChange={handleInputChange} />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Add Notes about this job</Form.Label>
+                    <Form.Label>ADD NOTES ABOUT THIS JOB</Form.Label>
                     <Form.Control 
                         as="textarea"
                         rows={4} 
@@ -107,11 +107,11 @@ export default function NewJobForm(props) {
                         onChange={handleInputChange} />
                 </Form.Group>
                 <Button 
-                    variant="primary"
+                    className='LoginBtn'
                     type="submit"
                     onClick={handleSubmit}
                     >
-                    Submit
+                    SUBMIT
                 </Button>
             </Form>
 

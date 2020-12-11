@@ -28,9 +28,32 @@ h3 {
   border: .5px solid hsl(345, 42%, 50%);
 }
 
+
+.jumbotron {
+  margin-top: 3rem;
+  background: hsl(235, 27%, 92%) !important;
+
+
+}
+
+
+.jumbo-header {
+  padding-top: .5rem;
+  padding-bottom: 1rem;
+}
+
+.jumbo-text {
+  font-family: 'Assistant';
+  font-weight: 300;
+  margin: 0 auto;
+  padding-bottom: 1rem;
+  max-width: 40%;
+}
+
 .btn-new-job {
   background-color: hsl(0, 100%, 79%) !important;
   box-shadow: 1px 1px 1px hsl(351, 32%, 92%) !important;
+  border-color: hsl(33, 69%, 95%) !important;
 }
 
 
@@ -43,8 +66,8 @@ h3 {
   background-color: hsl(345, 80%, 92%);
   box-shadow: 5px 5px 5px hsl(120, 4%, 95%) !important;
   border-radius: 5px;
-  padding-left: 3px;
-  padding-right: 3px;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .LoginBtn,
@@ -52,8 +75,14 @@ h3 {
 .RegisterBtn {
   margin-left: 6px;
   background-color: hsl(337, 80%, 46%) !important;
+  border-color: hsl(33, 69%, 95%) !important;
 }
 
+
+.nav-item.nav-link {
+  font-family: 'Assistant';
+  font-weight: 100;
+}
 
 .view-pg {
   background-color: hsl(228, 60%, 95%);
@@ -66,6 +95,14 @@ h3 {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+
+.notes {
+  margin-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: justify;
+}
+
 
 .view-headers {
   font-family: 'Assistant';

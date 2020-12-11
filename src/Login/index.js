@@ -56,17 +56,17 @@ export default function Login(props) {
             className='LoginBtn'
             variant="info"
             onClick={handleShow}>
-            Login
+            LOGIN
           </Button>
     
           <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
-              <Modal.Title>Login</Modal.Title>
+              <Modal.Title>LOGIN</Modal.Title>
             </Modal.Header>
             <Modal.Body>
             <Form>
                 <Form.Group>
-                    <Form.Label>Username</Form.Label>
+                    <Form.Label>USERNAME</Form.Label>
                     <Form.Control 
                         type="text" 
                         placeholder="Enter Username"
@@ -74,7 +74,7 @@ export default function Login(props) {
                         onChange={(e) => setUsername(e.target.value)} />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label>PASSWORD</Form.Label>
                     <Form.Control 
                         type="password" 
                         placeholder="Password"
@@ -82,10 +82,10 @@ export default function Login(props) {
                         onChange={(e) => setPassword(e.target.value)} />
                 </Form.Group>
               <Button
-              variant="primary"
+              className='LoginBtn'
               type='submit'
               onClick={handleLoginSubmit}>
-                Login
+                LOGIN
               </Button>
             
             </Form>

@@ -2,6 +2,7 @@ import React from 'react'
 //import axios from 'axios'
 import UserNav from '../UserNav'
 import GetJobPosts from '../GetJobPosts'
+import Jumbotron from 'react-bootstrap/Jumbotron'
 
 import ViewJob from '../ViewJob'
 import EditJobForm from '../EditJobForm'
@@ -212,6 +213,19 @@ export default class JobsContainer extends React.Component {
                     unsetUser={this.unsetUser}
                     createJob={this.addJob}
                  />
+                {
+                    this.state.loggedIn === false &&
+                    <Jumbotron>
+                    <h1 className='jumbo-header'>MY JOB TRACKR</h1>
+                    <div className='jumbo-text'>
+                    <p>
+                        was built with simplicity in mind to help organize and optimize your job application process. Add new jobs to your slate and keep track of your progress along the way.  
+                    </p>
+                    </div>
+                    <h6>Sign up and take charge of your job search!</h6>
+                    
+                    </Jumbotron>
+                }
                 { this.state.loggedIn === true && this.state.conView === ''
                     &&
                     <>    
