@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import axios from 'axios'
 
+
 export default function Register(props) {
     const [show, setShow] = useState(false);
     
@@ -12,6 +13,8 @@ export default function Register(props) {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+
+
 
 
     const register = async (username, password) => {
@@ -38,7 +41,10 @@ export default function Register(props) {
     
     return (
         <>
-          <Button variant="primary" onClick={handleShow}>
+          <Button
+            className='RegisterBtn'
+            variant="info"
+            onClick={handleShow}>
             Register
           </Button>
     

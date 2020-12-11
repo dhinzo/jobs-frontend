@@ -52,7 +52,10 @@ export default function Login(props) {
     
     return (
         <div>
-          <Button variant="primary" onClick={handleShow}>
+          <Button
+            className='LoginBtn'
+            variant="info"
+            onClick={handleShow}>
             Login
           </Button>
     

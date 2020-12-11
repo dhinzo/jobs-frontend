@@ -15,10 +15,7 @@ export default class JobsContainer extends React.Component {
             loggedInUser: null,
             idOfViewJob: -1,
             idOfJobToEdit: -1,
-            conView: '',
-            unregisteredColumn: [],
-            inProgressColumn: [],
-            completedColumn: []            
+            conView: '',          
         }
     }
     // ****** SET USER FUNCTIONS ******
@@ -215,10 +212,10 @@ export default class JobsContainer extends React.Component {
                     unsetUser={this.unsetUser}
                     createJob={this.addJob}
                  />
-                <h1>Trackr</h1>
                 { this.state.loggedIn === true && this.state.conView === ''
                     &&
                     <>    
+                <h1>MY JOB TRACKR</h1>
                 <GetJobPosts
                     jobs={this.state.jobs}
                     viewJob={this.viewJob}

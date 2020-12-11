@@ -1,3 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@100;200;300;400&family=Assistant:wght@200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
+html {
+  background-color: hsl(130, 46%, 95%);
+}
+
 .App {
   text-align: center;
+  background-color: hsl(130, 46%, 95%);
+}
+
+h1 {
+  font-family: 'Poiret One';
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+h3 {
+  font-family: 'Assistant', sans-serif;
+  font-weight: 200;
+}
+
+.navbar {
+  background-color: hsl(33, 69%, 95%);
+  /* background-image: url('https://i.imgur.com/SuXeqqE.png'); */
+  background-attachment: fixed;
+  border: .5px solid hsl(345, 42%, 50%);
+}
+
+.btn-new-job {
+  background-color: hsl(0, 100%, 79%) !important;
+  box-shadow: 1px 1px 1px hsl(351, 32%, 92%) !important;
+}
+
+
+.navbar-text {
+  font-family: 'Assistant';
+  font-weight: 200;
+}
+
+.welcome-banner {
+  background-color: hsl(345, 80%, 92%);
+  box-shadow: 5px 5px 5px hsl(120, 4%, 95%) !important;
+  border-radius: 5px;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.LoginBtn,
+.LogoutBtn,
+.RegisterBtn {
+  margin-left: 6px;
+  background-color: hsl(337, 80%, 46%) !important;
+}
+
+
+.view-pg {
+  background-color: hsl(228, 60%, 95%);
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  max-width: 30%;
+  margin: 0 auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.view-headers {
+  font-family: 'Assistant';
+}
+
+.boardTitle {
+  margin-bottom: 2rem;
+}
+
+.card-header,
+.card-footer,
+.card-title {
+  font-family: 'Assistant', sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+
+.location-footer {
+  margin-bottom: 0;
+  font-style: normal;
+  font-weight: 300;
 }

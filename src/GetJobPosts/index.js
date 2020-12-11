@@ -21,7 +21,7 @@ export default function GetJobPosts(props) {
 
 
         setJobState({ 'unregistered': unregjobs, 'inProgress': inprog, 'completed': completed})
-        console.log("updating props Effect")
+        //console.log("updating props Effect")
     }, [props.jobs])
     
     const reorder = (arr, startIndex, endIndex) => {
@@ -40,10 +40,10 @@ export default function GetJobPosts(props) {
         targetJob.progress = droppableDestination
         props.updateProgress(targetJob)
 
-        console.log("targetjob", targetJob)
+        //console.log("targetjob", targetJob)
         //remove it from its current array
         const newSourceArray = jobState[droppableSource].filter((job)=> job.id !== targetJob.id )
-        console.log("newSourceArray", newSourceArray)
+        //console.log("newSourceArray", newSourceArray)
         
         //add target job to droppable destination
         const destinationArray = [
@@ -62,37 +62,33 @@ export default function GetJobPosts(props) {
     // Drag End function
     const onDragEnd = result => {
         const { destination, source} = result
-        console.log("this is the result", result)
+        //console.log("this is the result", result)
         if(!destination) {
-            console.log("You tried to drag out of a drag and drop context")
+            //console.log("You tried to drag out of a drag and drop context")
             return
         }
         if(
             destination.droppableId === source.droppableId &&
             destination.index === source.index 
         ) {
-            console.log("you cancelled the drag")
+            //console.log("you cancelled the drag")
             return
         }
-        // result = move(
-        //     props.jobs(source.droppableId),
-        //     props.jobs(destination.droppableId),
-        //     source,
-        //     destination
-        // )
+
         if(
             destination.droppableId === source.droppableId &&
             destination.index !== source.index
         ) {
-            console.log("Reordering", result)
+            //console.log("Reordering", result)
             reorder(
                 source.droppableId,
                 source.index,
                 destination.index
             )
         }
+        
         if(destination.droppableId !== source.droppableId){
-            console.log("moving the job: ", result)
+            //console.log("moving the job: ", result)
             move(
                 source.index,
                 destination.index,
@@ -106,8 +102,7 @@ export default function GetJobPosts(props) {
         
         return (
             <Draggable
-                draggableId={`${job.id}`}
-                
+                draggableId={`${job.id}`}                
                 index={index}
                 key={job.id}>
                 {(provided, snapshot) => (
@@ -115,28 +110,27 @@ export default function GetJobPosts(props) {
                         ref={provided.innerRef}
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
-                    >   
+                    > 
                                     
             <Card
                 key={job.id}
-                bg='dark'
-                text={'bg' === 'light' ? 'dark' : 'white'}
-                style={{ width: '15rem', marginLeft: '2px', marginRight: '2px', marginTop: '5px'}}
+                bg='light'
+                border='dark'
+                style={{ width: '15rem', margin: '0 auto', marginTop: '5px'}}
                 className="mb-2"
                 >
-                <Card.Header
-                    
+                <Card.Header                    
                     onClick={ () => props.viewJob(job.id)}>{job.company}</Card.Header>
                 <Card.Body>
                     <Card.Title>
-                    {job.position}
+                    POSITION:
                     </Card.Title>
                     <Card.Text>
-                    {job.location}
+                    {job.position}                    
                     </Card.Text>
                 </Card.Body>            
             <Card.Footer>
-                
+            LOCATION: <p className='location-footer'>{job.location}</p>
             </Card.Footer>
             </Card>
             </div>
@@ -149,8 +143,7 @@ export default function GetJobPosts(props) {
         
         return (
             <Draggable
-                draggableId={`${job.id}`}
-                
+                draggableId={`${job.id}`}                
                 index={index}
                 key={job.id}>
                 {(provided, snapshot) => (
@@ -162,24 +155,23 @@ export default function GetJobPosts(props) {
                                     
             <Card
                 key={job.id}
-                bg='dark'
-                text={'bg' === 'light' ? 'dark' : 'white'}
-                style={{ width: '15rem', marginLeft: '2px', marginRight: '2px', marginTop: '5px'}}
+                bg='light'
+                border='warning'
+                style={{ width: '15rem', margin: '0 auto', marginTop: '5px'}}
                 className="mb-2"
                 >
-                <Card.Header
-                    
+                <Card.Header                    
                     onClick={ () => props.viewJob(job.id)}>{job.company}</Card.Header>
                 <Card.Body>
                     <Card.Title>
-                    {job.position}
+                    POSITION:
                     </Card.Title>
                     <Card.Text>
-                    {job.location}
+                    {job.position}                    
                     </Card.Text>
                 </Card.Body>            
-            <Card.Footer>
-                
+                <Card.Footer>
+            LOCATION: <p className='location-footer'>{job.location}</p>
             </Card.Footer>
             </Card>
             </div>
@@ -192,8 +184,7 @@ export default function GetJobPosts(props) {
         
         return (
             <Draggable
-                draggableId={`${job.id}`}
-                
+                draggableId={`${job.id}`}                
                 index={index}
                 key={job.id}>
                 {(provided, snapshot) => (
@@ -203,39 +194,38 @@ export default function GetJobPosts(props) {
                         {...provided.dragHandleProps}
                     >   
                                     
-            <Card
-                key={job.id}
-                bg='dark'
-                text={'bg' === 'light' ? 'dark' : 'white'}
-                style={{ width: '15rem', marginLeft: '2px', marginRight: '2px', marginTop: '5px'}}
-                className="mb-2"
-                >
-                <Card.Header
-                    
-                    onClick={ () => props.viewJob(job.id)}>{job.company}</Card.Header>
-                <Card.Body>
-                    <Card.Title>
-                    {job.position}
-                    </Card.Title>
-                    <Card.Text>
-                    {job.location}
-                    </Card.Text>
-                </Card.Body>            
-            <Card.Footer>
-                
-            </Card.Footer>
-            </Card>
-            </div>
+                    <Card
+                        key={job.id}
+                        bg='light'
+                        border='success'
+                        style={{ width: '15rem', margin: '0 auto', marginTop: '5px'}}
+                        className="mb-2"
+                        >
+                        <Card.Header                    
+                                onClick={ () => props.viewJob(job.id)}>{job.company}</Card.Header>
+                            <Card.Body>
+                                <Card.Title>
+                                POSITION:
+                                </Card.Title>
+                                <Card.Text>
+                                {job.position}                    
+                                </Card.Text>
+                        </Card.Body>            
+                        <Card.Footer>
+                            LOCATION: <p className='location-footer'>{job.location}</p>
+                        </Card.Footer>
+                    </Card>
+                </div>
             )}
-            </Draggable>
+    </Draggable>
         )
     })
-    console.log("here is the piece of job state", jobState)
+    //console.log("here is the piece of job state", jobState)
     return (
         
-        <div style={{ border: '1px solid black', display: 'flex', flexDirection: 'row'}}>
+        <div style={{ display: 'flex', flexDirection: 'row', marginLeft: '1rem', marginRight: '1rem'}}>
             <DragDropContext onDragEnd={onDragEnd}>
-            <Droppable droppableId='unregistered'>
+            <Droppable droppableId={'unregistered'}>
             {(provided, snapshot) => {                
                 return (
             <div
@@ -243,9 +233,10 @@ export default function GetJobPosts(props) {
                 {...provided.droppableProps}
                 ref={provided.innerRef}
                 style={{
-                    border: '1px solid black',
-                    background: snapshot.isDraggingOver ? 'lightblue' : 'lightgrey' 
-                }} >
+                    marginRight: '.5rem',
+                    borderRadius: '10px',
+                    background: snapshot.isDraggingOver ? 'hsl(201, 54%, 95%)' : 'hsl(201, 85%, 89%)', 
+                }} ><h3 className="boardTitle">UNREGISTERED</h3>
                     {unregJobs}
                     {provided.placeholder}
             </div>
@@ -260,26 +251,27 @@ export default function GetJobPosts(props) {
                         {...provided.droppableProps}
                         ref={provided.innerRef}
                         style={{
-                            border: '1px solid black',
-                            background: snapshot.isDraggingOver ? 'lightyellow' : 'lightgrey' 
-                }}>
+                            marginRight: '.5rem',
+                            borderRadius: '10px',
+                            background: snapshot.isDraggingOver ? 'hsl(34, 71%, 78%)' : 'hsl(34, 71%, 85%)',                             
+                }}><h3 className="boardTitle">IN PROGRESS</h3>
                    {inProgJobs}
                   {provided.placeholder}  
                 </div>
                 )
             }}
             </Droppable>
-            <Droppable droppableId='completed'>
+            <Droppable droppableId={'completed'}>
             {(provided, snapshot) => {
                 return (
                     <div
-                        className='col'
+                        className='col eachColumn'
                         {...provided.droppableProps}
                         ref={provided.innerRef}
                         style={{
-                            border: '1px solid black',
-                            background: snapshot.isDraggingOver ? 'lightgreen' : 'lightgrey' 
-                }}>
+                            borderRadius: '10px',
+                            background: snapshot.isDraggingOver ? 'hsl(158, 29%, 48%)' : 'hsl(158, 29%, 62%)' 
+                }}><h3 className="boardTitle">COMPLETED!</h3>
                     {completeJobs}
                   {provided.placeholder}  
                 </div>

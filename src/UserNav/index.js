@@ -8,32 +8,38 @@ import NewJobForm from '../NewJobForm'
 export default function UserNav(props) {
     return (
         <div>
-            <Navbar bg="light" expand="lg">
+            <Navbar expand="lg">
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 { props.loggedIn === true &&
-                <Navbar.Text>Signed in as: {props.loggedInUser}</Navbar.Text>
+                <div className='welcome-banner'>
+                <Navbar.Text>SIGNED IN AS: {props.loggedInUser.toUpperCase()}</Navbar.Text>
+                </div>
                 }
-                    <Nav className="mr-auto">
-                    </Nav>
-                    { props.loggedIn === true ?
-                    <React.Fragment>
-                    <NewJobForm
+                { props.loggedIn === true &&
+                <NewJobForm
                         createJob={props.createJob} />
-                    <Logout
-                        unsetUser={props.unsetUser} />
-                    </React.Fragment> 
-                    :
-                    <React.Fragment>
-                    <Register
-                        setUser={props.setUser} />
-                    <Login
-                        getJobs={props.getJobs}
-                        clearJobs={props.clearJobs}
-                        login={props.login}
-                        setUser={props.setUser} />
-                    </React.Fragment>
-                    }
+                }
+                <Nav className="mr-auto">
+                    </Nav>
+                        {props.loggedIn === true 
+                            ?
+                        <React.Fragment>
+                            <Logout
+                                unsetUser={props.unsetUser} />
+                        </React.Fragment> 
+                            :
+                        <React.Fragment>
+                            <Register
+                                setUser={props.setUser}
+                                login={props.login} />
+                            <Login
+                                getJobs={props.getJobs}
+                                clearJobs={props.clearJobs}
+                                login={props.login}
+                                setUser={props.setUser} />
+                        </React.Fragment>
+                            }
 
                 </Navbar.Collapse>
             </Navbar>   

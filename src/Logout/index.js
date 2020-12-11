@@ -24,6 +24,9 @@ export default function Logout(props) {
     return (
         <React.Fragment>
             <Button
+                
+                style={{color:"white", boxShadow: "1px 1px 1px rgba(46, 46, 46, 0.62)"}}
+                className='LogoutBtn'
                 onClick={handleSubmit}>Logout</Button>
         </React.Fragment>
     )

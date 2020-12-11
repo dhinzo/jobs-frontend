@@ -33,7 +33,11 @@ export default function NewJobForm(props) {
 
     return (
         <>
-        <Button onClick={() => setLgShow(true)}>Create New Job</Button>
+        <Button
+            style={{ borderRadius: '50%', marginLeft: '1rem', color:"white"}}
+            className='btn-new-job'
+            
+            onClick={() => setLgShow(true)}>+</Button>
         <Modal
           size="lg"
           show={lgShow}
