@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# MY JOB TRACKR
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## an app for keeping track of the job application process
+### created by Devin Hinzo
 
-In the project directory, you can run:
+The inspiration behind this app stemmed from wanting to focus and organize my job search as I break into the tech field as a software engineer.
+I am notorious for getting distracted, starting projects, and losing tab of where I leave those projects, creating a cycle of inefficiency. Through my time in General Assembly's Software Engineer Immersive course, I addressed flaws in my study and work habits and I wanted to create an app to show myself how far I've come.
 
-### `npm start`
+My Job Trackr is a kanban board-style app that allows users to: 
+* register and gain access to a personal dashboard
+* add jobs to which they'll apply
+* see their jobs as cards organized in three columns:
+  * Unregistered
+  * In Progress
+  * Completed
+* drag and drop individual cards as they progress through the job search process
+* view job app-specific information, such as location, position, link, and notes
+* edit and delete jobs at any point in the process
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Technologies Used
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* Python/Flask micro web framework
+* React
+* Altassian's [react-beautiful-dnd](https://github.com/atlassian/react-beautiful-dnd) library for drag n drop functionality
 
-### `npm test`
+## How to Use This App
+1. Register for a new account by creating a username and password
+2. Login using your credentials
+3. Click the + symbol in the top left corner next to the displayed logged-in username
+4. Fill out the details of the job app, and click SUBMIT
+5. View the job app info by click the header of the card, you can also edit and delete info here
+6. Click/tap and hold the card to activate drag n' drop
+7. Move the card to the desired column representing the stage of that job app
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features to Come
+1. Mobile and Tablet-friendly versions
+2. Checkboxes to keep track of the individual items to include in the app
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+####
+Special Thanks to Deja, Mohammed, Matt, and Brian for being great instructors and offering guidance on this journey. Thank you to Paresh and Nate who gave up countless hours in helping me and other students in the cohort. Thank you to my tutor and friend Cyrus Kurtz who helped me and taught me important principles in debugging and implementing best practices in my work as a software engineer.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
