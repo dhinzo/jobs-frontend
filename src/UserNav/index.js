@@ -7,7 +7,7 @@ import NewJobForm from '../NewJobForm'
 
 export default function UserNav(props) {
     return (
-        <div>
+        <React.Fragment>
             <Navbar expand="lg">
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -43,6 +43,6 @@ export default function UserNav(props) {
 
                 </Navbar.Collapse>
             </Navbar>   
-        </div>
+        </React.Fragment>
     )
 }

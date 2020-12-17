@@ -14,6 +14,7 @@ h1 {
   font-family: 'Poiret One';
   padding-top: 2rem;
   padding-bottom: 2rem;
+  margin: 0 auto;
 }
 
 h3 {
@@ -35,6 +36,37 @@ h3 {
 
 
 }
+
+@media screen and (max-width: 850px) {
+  .card {
+    width: 8rem !important;
+  }
+
+  .card-title {
+    font-size: 1rem !important;
+  }
+}
+
+
+@media screen and (max-width: 590px) {
+  .card {
+    width: 4rem !important;
+  }
+
+  .boardTitle {
+    font-size: .75rem;
+  }
+
+  .card-title,
+  .card-footer,
+  .card-header,
+  .card-text,
+  .card-body {
+    font-size: .25rem !important;
+    padding: 2px !important;
+  }
+}
+
 
 
 .jumbo-header {

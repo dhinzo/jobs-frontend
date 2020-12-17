@@ -223,7 +223,7 @@ export default function GetJobPosts(props) {
     //console.log("here is the piece of job state", jobState)
     return (
         
-        <div style={{ display: 'flex', flexDirection: 'row', marginLeft: '1rem', marginRight: '1rem'}}>
+        <div className="cardContainer" style={{ display: 'flex', flexDirection: 'row', marginLeft: '1rem', marginRight: '1rem'}}>
             <DragDropContext onDragEnd={onDragEnd}>
             <Droppable droppableId={'unregistered'}>
             {(provided, snapshot) => {                
