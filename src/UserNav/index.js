@@ -2,7 +2,6 @@ import React from 'react'
 import { Navbar, Nav } from 'react-bootstrap'
 import Login from '../Login'
 import Logout from '../Logout'
-import Register from '../Register'
 import NewJobForm from '../NewJobForm'
 
 export default function UserNav(props) {
@@ -30,9 +29,6 @@ export default function UserNav(props) {
                         </React.Fragment> 
                             :
                         <React.Fragment>
-                            <Register
-                                setUser={props.setUser}
-                                login={props.login} />
                             <Login
                                 getJobs={props.getJobs}
                                 clearJobs={props.clearJobs}

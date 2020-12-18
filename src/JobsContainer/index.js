@@ -3,7 +3,7 @@ import React from 'react'
 import UserNav from '../UserNav'
 import GetJobPosts from '../GetJobPosts'
 import Jumbotron from 'react-bootstrap/Jumbotron'
-
+import Register from '../Register'
 import ViewJob from '../ViewJob'
 import EditJobForm from '../EditJobForm'
 
@@ -215,16 +215,20 @@ export default class JobsContainer extends React.Component {
                  />
                 {
                     this.state.loggedIn === false &&
+                    <React.Fragment>
                     <Jumbotron>
                     <h1 className='jumbo-header'>MY JOB TRACKR</h1>
                     <div className='jumbo-text'>
-                    <p>
-                        was built with simplicity in mind to help organize and optimize your job application process. Add new jobs to your slate and keep track of your progress along the way.  
+                    <p>was built with simplicity in mind to help organize and optimize your job application process. Add new jobs to your slate and keep track of your progress along the way.  
                     </p>
                     </div>
                     <h6>Sign up and take charge of your job search!</h6>
-                    
+                    <Register
+                        setUser={this.setUser}
+                        login={this.login} />
+                    <p className="login-cta">Have an account? Please Login!</p>
                     </Jumbotron>
+                    </React.Fragment>
                 }
                 { this.state.loggedIn === true && this.state.conView === ''
                     &&
