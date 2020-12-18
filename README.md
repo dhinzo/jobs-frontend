@@ -5,7 +5,7 @@
 ### created by Devin Hinzo
 
 The inspiration behind this app stemmed from wanting to focus and organize my job search as I break into the tech field as a software engineer.
-I am notorious for getting distracted, starting projects, and losing tab of where I leave those projects, creating a cycle of inefficiency. Through my time in General Assembly's Software Engineer Immersive course, I addressed flaws in my study and work habits and I wanted to create an app to show myself how far I've come.
+I am notorious for getting distracted, starting projects, and losing tab of where I leave those projects, creating a cycle of inefficiency. Through my time in General Assembly's Software Engineer Immersive course, I addressed flaws in my study and work habits and I wanted to create an app to show myself how far I've come. Access the app on Heroku [here](https://myjobtrackr-app.herokuapp.com)
 
 My Job Trackr is a kanban board-style app that allows users to: 
 * register and gain access to a personal dashboard
