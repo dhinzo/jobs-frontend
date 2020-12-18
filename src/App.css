@@ -74,6 +74,15 @@ h3 {
     font-size: .25rem !important;
     padding: 2px !important;
   }
+
+  .view-pg {
+    font-size: .85rem !important;
+  }
+
+  .view-headers {
+    font-size: 1rem !important;
+  }
+
 }
 
 .login-cta {
@@ -131,7 +140,7 @@ h3 {
   background-color: hsl(228, 60%, 95%);
   border: 2px solid lightgray;
   border-radius: 5px;
-  max-width: 30%;
+  max-width: 70%;
   margin: 0 auto;
   margin-top: 2rem;
   margin-bottom: 2rem;
