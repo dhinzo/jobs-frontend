@@ -89,6 +89,15 @@ h3 {
   margin-top: .75rem;
 }
 
+.modal-body {
+  font-family: "Assistant";
+  font-weight: 300;
+}
+
+.errorMessage {
+  font-style: italic;
+}
+
 .jumbo-header {
   padding-top: .5rem;
   padding-bottom: 1rem;

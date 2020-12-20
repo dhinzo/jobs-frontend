@@ -7,6 +7,7 @@ import axios from 'axios'
 export default function Login(props) {
     // console.log("here are the props in Login", props)
     const [show, setShow] = useState(false);
+    const [errMessage, setErrMessage] = useState('')
     
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -33,17 +34,21 @@ export default function Login(props) {
               props.setUser(res.data.data.username)
               props.clearJobs()
               props.getJobs()
-              // console.log("here are the props after login: ", state)
-          }     
-      } catch(err) {
-          console.log("there was an error logging in: ", err)
+              // console.log("here are the props after login: ", state)          
+          } 
+        } catch(err) {
+            // console.log(err)
+            handleClose()
+            setUsername('')
+            setPassword('')
+            setErrMessage('Incorrect credentials. Please try again')
+            handleShow()
       }
   }
 
 
     const handleLoginSubmit = (e) => {
       e.preventDefault()
-        //lifting up state
       login(username, password)      
       handleClose()
     }
@@ -64,6 +69,7 @@ export default function Login(props) {
               <Modal.Title>LOGIN</Modal.Title>
             </Modal.Header>
             <Modal.Body>
+            {errMessage}
             <Form>
                 <Form.Group>
                     <Form.Label>USERNAME</Form.Label>
