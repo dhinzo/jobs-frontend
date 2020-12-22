@@ -53,7 +53,11 @@ h3 {
 
 @media screen and (max-width: 590px) {
   .card {
-    width: 4rem !important;
+    width: 4.85rem !important;
+  }
+
+  .welcome-banner {
+    width: 55% !important;
   }
 
   .jumbo-text {
@@ -115,6 +119,7 @@ h3 {
   background-color: hsl(0, 100%, 79%) !important;
   box-shadow: 1px 1px 1px hsl(351, 32%, 92%) !important;
   border-color: hsl(33, 69%, 95%) !important;
+  margin-left: 1rem;
 }
 
 
@@ -129,6 +134,22 @@ h3 {
   border-radius: 5px;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+@media screen and (max-width: 990px) {
+  .welcome-banner {
+    width: 30%;
+    margin: 0 auto;
+  }
+
+  .btn-new-job {
+    margin-left: 0;
+  }
+
+  .LogoutBtn {
+    margin-left: 0 !important;
+  }
+
 }
 
 .LoginBtn,

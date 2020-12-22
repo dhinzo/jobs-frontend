@@ -1,11 +1,13 @@
 import React from 'react'
-//import axios from 'axios'
 import UserNav from '../UserNav'
 import GetJobPosts from '../GetJobPosts'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Register from '../Register'
 import ViewJob from '../ViewJob'
 import EditJobForm from '../EditJobForm'
+
+
+
 
 export default class JobsContainer extends React.Component {
     constructor(props) {
@@ -36,7 +38,7 @@ export default class JobsContainer extends React.Component {
         })
     }
     // ****** VIEW FUNCTIONS *******    
-    
+
     clearJobs = () => {
         this.setState({
             jobs: []
@@ -225,7 +227,8 @@ export default class JobsContainer extends React.Component {
                     <h6>Sign up and take charge of your job search!</h6>
                     <Register
                         setUser={this.setUser}
-                        login={this.login} />
+                        login={this.login}
+                     />
                     <p className="login-cta">Have an account? Please Login!</p>
                     </Jumbotron>
                     </React.Fragment>

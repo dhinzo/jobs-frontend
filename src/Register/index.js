@@ -10,12 +10,12 @@ export default function Register(props) {
     
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
+    
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
-
-
+    const [errMessage, setErrMessage] = useState('')
+    const [successMessage, setSuccessMessage] = useState('')
 
     const register = async (username, password) => {
         const url = process.env.REACT_APP_API_URL + "/trackr/users/register"
@@ -24,19 +24,22 @@ export default function Register(props) {
                 username: username,
                 password: password
             }, { withCredentials: true })
-            if (res.status === 200) {
+            if (res.status === 200 || res.status === 201) {
                 setUsername(username)
                 setPassword(password)
-                props.setUser(res.data.data.username)
+                setSuccessMessage('Account created successfully! Please close this dialog box and login')
             }
         } catch (err) {
-            console.log("There was an error registering: " ,err)
+            setUsername(username)
+            setPassword(password)
+            setErrMessage('That username is already taken. Please choose another and try again.')
         }
     }
     const handleSubmit = (e) => {
     e.preventDefault()
     register(username, password)  
-    handleClose()
+    
+    
     }
     
     return (
@@ -46,13 +49,28 @@ export default function Register(props) {
             variant="info"
             onClick={handleShow}>
             REGISTER
-          </Button>
-    
+          </Button>    
           <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
               <Modal.Title>REGISTER</Modal.Title>
             </Modal.Header>
             <Modal.Body>
+            <div style={{
+              backgroundColor: '#f8d7da',
+              color: '#721c24',
+              textAlign: 'center',
+              borderRadius: '5px',
+              marginBottom: '5px'}}>
+              {errMessage}
+              </div>
+              <div style={{
+              backgroundColor: '#c3e6cb',
+              color: '#155724',
+              textAlign: 'center',
+              borderRadius: '5px',
+              marginBottom: '5px'
+              }}>{successMessage}</div>
+              
             <Form>
                 <Form.Group>
                     <Form.Label>CREATE YOUR USERNAME</Form.Label>

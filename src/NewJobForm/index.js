@@ -34,7 +34,7 @@ export default function NewJobForm(props) {
     return (
         <>
         <Button
-            style={{ borderRadius: '50%', marginLeft: '1rem', color:"white"}}
+            style={{ borderRadius: '50%', color:"white"}}
             className='btn-new-job'
             size='lg'
             onClick={() => setLgShow(true)}>+</Button>

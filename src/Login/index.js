@@ -41,7 +41,7 @@ export default function Login(props) {
             handleClose()
             setUsername('')
             setPassword('')
-            setErrMessage('Incorrect credentials. Please try again')
+            setErrMessage('Invalid credentials. Please try again')
             handleShow()
       }
   }
@@ -69,7 +69,14 @@ export default function Login(props) {
               <Modal.Title>LOGIN</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-            {errMessage}
+            <div style={{
+              backgroundColor: '#f8d7da',
+              color: '#721c24',
+              textAlign: 'center',
+              borderRadius: '5px',
+              marginBottom: '5px'}}>
+              {errMessage}
+              </div>
             <Form>
                 <Form.Group>
                     <Form.Label>USERNAME</Form.Label>
