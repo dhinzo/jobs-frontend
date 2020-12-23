@@ -75,7 +75,7 @@ h3 {
   .card-header,
   .card-text,
   .card-body {
-    font-size: .25rem !important;
+    font-size: .75rem !important;
     padding: 2px !important;
   }
 
@@ -85,6 +85,13 @@ h3 {
 
   .view-headers {
     font-size: 1rem !important;
+  }
+
+}
+
+@media screen and (max-width: 350px) {
+  .jumbo-header {
+    font-size: 2rem;
   }
 
 }

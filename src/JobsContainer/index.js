@@ -191,16 +191,6 @@ export default class JobsContainer extends React.Component {
     findJobToEdit = () => {
         return this.state.jobs.find(job => job.id === this.state.idOfViewJob)    
     }
-
-    // ****** LIFECYCLE *******
-
-    // componentDidMount() {
-    //    this.getJobs()    
-    // }
-
-    // componentDidUpdate() {
-    //     this.getJobs()
-    // }
     
 
     render() {
@@ -221,7 +211,7 @@ export default class JobsContainer extends React.Component {
                     <Jumbotron>
                     <h1 className='jumbo-header'>MY JOB TRACKR</h1>
                     <div className='jumbo-text'>
-                    <p>was built with simplicity in mind to help organize and optimize your job application process. Add new jobs to your slate and keep track of your progress along the way.  
+                    <p className='jumbo-body'>was built with simplicity in mind to help organize and optimize your job application process. Add new jobs to your slate and keep track of your progress along the way.  
                     </p>
                     </div>
                     <h6>Sign up and take charge of your job search!</h6>

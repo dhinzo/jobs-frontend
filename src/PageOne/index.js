@@ -21,6 +21,7 @@ export default function PageOne(props) {
                 
             </div>
            <Button
+                className='back-button'
                 variant='outline-dark'
                 onClick= {() => props.backToJobs()}>Back to Jobs</Button>
             <EditJobForm                

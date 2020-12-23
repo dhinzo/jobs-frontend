@@ -8,17 +8,17 @@ export default function Login(props) {
     // console.log("here are the props in Login", props)
     const [show, setShow] = useState(false);
     const [errMessage, setErrMessage] = useState('')
-    
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-
-
-    // const handleInputChange = (e) => {
-    //   setEachEntry({ ...eachEntry, [e.target.name]: e.target.value})
-    // }
-
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    
+    const handleClose = () => {
+      setShow(false)
+      setErrMessage('')
+      setUsername('')
+      setPassword('')
+    };
+    const handleShow = () => setShow(true);
+
 
     const login = async (username, password) => {
       const url = process.env.REACT_APP_API_URL + "/trackr/users/login"
